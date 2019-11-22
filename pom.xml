@@ -14,6 +14,12 @@
 		<module>microservicecloud-api</module>
 		<module>microservicecloud-svc</module>
 		<module>microservicecloud-web</module>
+		<module>microservicecloud-eureka-provider8002</module>
+		<module>microservicecloud-eureka-provider8003</module>
+		<module>microservicecloud-eureka-provider8004</module>
+		<module>microservicecloud-eureka-consumer7002</module>
+		<module>microservicecloud-eureka-consumer7003</module>
+		<module>microservicecloud-eureka-consumer7004</module>
 	</modules>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

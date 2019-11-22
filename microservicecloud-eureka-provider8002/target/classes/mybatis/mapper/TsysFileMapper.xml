@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.pc.test.springcloud.svc.file.domain.dao.TsysFileDao" >
+  <resultMap id="BaseResultMap" type="com.pc.test.springcloud.api.domain.TsysFile" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
+    <result column="create_user_id" property="createUserId" jdbcType="VARCHAR" />
+    <result column="create_user_name" property="createUserName" jdbcType="VARCHAR" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="update_user_id" property="updateUserId" jdbcType="VARCHAR" />
+    <result column="update_user_name" property="updateUserName" jdbcType="VARCHAR" />
+    <result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  	<select id="findById" resultMap="BaseResultMap" parameterType="Long">
+		select file_name,create_user_id,create_user_name,create_time,update_user_id,update_user_name,update_time from t_sys_file where id=#{id};
+	</select>
+	<select id="findAll" resultMap="BaseResultMap">
+		select id,file_name,create_user_id,create_user_name,create_time,update_user_id,update_user_name,update_time from t_sys_file ;
+	</select>
+  <insert id="addFile" parameterType="com.pc.test.springcloud.api.domain.TsysFile" >
+    insert into t_sys_file (id, file_name, create_user_id, 
+      create_user_name, create_time, update_user_id, 
+      update_user_name, update_time)
+    values (#{id,jdbcType=VARCHAR}, #{fileName,jdbcType=VARCHAR}, #{createUserId,jdbcType=VARCHAR}, 
+      #{createUserName,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updateUserId,jdbcType=VARCHAR}, 
+      #{updateUserName,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+  </insert>
+  
+</mapper>

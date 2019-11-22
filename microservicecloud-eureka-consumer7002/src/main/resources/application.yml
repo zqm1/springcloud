@@ -1,0 +1,12 @@
+server:
+  port: 7002
+  
+spring:
+   application:
+    name: microservicecloud-eureka-consumer7002 
+      
+eureka:
+  client:
+    register-with-eureka: false
+    service-url: 
+      defaultZone: http://www.springcloud2.com:8003/eureka/,http://www.springcloud3.com:8004/eureka/,http://www.springcloud1.com:8002/eureka/ 
